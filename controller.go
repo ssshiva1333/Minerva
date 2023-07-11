@@ -22,6 +22,7 @@ const (
 func main() {
 	fmt.Println("** TCP Reverse Shell Payload **")
 	fmt.Println("**   Developer -> shiva13    **")
+	fmt.Println("**          Minerva          **")
 	fmt.Println("")
 	fmt.Println("")
 
